@@ -11,4 +11,8 @@ RUN apt-get update; \
         zip \
         git \
         curl \
-        openssl
+        openssl \
+        software-properties-common
+
+RUN apt autoremove; \
+    apt clean

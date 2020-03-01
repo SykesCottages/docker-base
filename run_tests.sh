@@ -5,6 +5,7 @@ itShouldCheckThatAllInstalledSoftwareExists() {
     doesCommandExist git
     doesCommandExist curl
     doesCommandExist openssl
+    doesCommandExist add-apt-repository
 }
 
 doesCommandExist() {
