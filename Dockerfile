@@ -14,5 +14,5 @@ RUN apt-get update; \
         openssl \
         software-properties-common
 
-RUN apt autoremove; \
-    apt clean
+RUN apt-get autoremove; \
+    apt-get clean -yy
