@@ -8,4 +8,4 @@ rm -rf /var/lib/apt/lists/*
 
 git clone https://github.com/canonical/sec-cvescan
 pip3 install --user sec-cvescan/
-~/.local/bin/cvescan
+~/.local/bin/cvescan $@
