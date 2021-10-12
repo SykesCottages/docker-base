@@ -1,7 +1,7 @@
 #!/bin/sh
 
 apt-get update
-apt install python3-apt python3-pip
+apt-get install -y -q python3-apt python3-pip
 apt-get autoremove -y -q
 apt-get autoclean -y -q
 rm -rf /var/lib/apt/lists/*
