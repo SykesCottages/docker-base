@@ -7,8 +7,9 @@ RUN echo 'Acquire::http::Pipeline-Depth "0";' > /etc/apt/apt.conf.d/00no-pipelin
 
 RUN echo $TZ > /etc/timezone
 
-RUN apt-get update && \
-    apt-get install -y -q \
+RUN apt update && \
+    apt upgrade -y && \
+    apt install -y -q \
         zip \
         git \
         curl \

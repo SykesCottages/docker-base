@@ -8,6 +8,8 @@ docker-compose -f docker-compose.test.yml run --rm sut
 # You need to provide your own creds because #security
 docker login
 
+docker pull ubuntu:20.04
+
 docker build --no-cache -t sykescottages/base:$VERSION -t sykescottages/base:latest .
 
 docker push sykescottages/base:$VERSION
