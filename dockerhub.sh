@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=1.2.2
+VERSION=2.0.0
 
 # Validate the container passes our tests
 docker-compose -f docker-compose.test.yml run --rm sut
@@ -8,7 +8,7 @@ docker-compose -f docker-compose.test.yml run --rm sut
 # You need to provide your own creds because #security
 docker login
 
-docker pull ubuntu:20.04
+docker pull ubuntu:22.04
 
 docker build --no-cache -t sykescottages/base:$VERSION -t sykescottages/base:latest .
 
