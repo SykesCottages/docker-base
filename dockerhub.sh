@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=1.2.1
+VERSION=1.2.2
 
 # Validate the container passes our tests
 docker-compose -f docker-compose.test.yml run --rm sut

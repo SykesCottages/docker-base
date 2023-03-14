@@ -19,6 +19,3 @@ RUN apt update && \
 RUN apt-get autoremove -y -q && \
     apt-get autoclean -y -q && \
     rm -rf /var/lib/apt/lists/*
-
-# To verify if any images contain CVE vulnerabilities downstream
-COPY cvescan.sh /security/cvescan.sh
