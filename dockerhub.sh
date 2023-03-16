@@ -1,19 +1,21 @@
-#!/bin/sh
+#!/bin/bash
 
-VERSION=2.0.0
-
-# Validate the container passes our tests
-docker-compose -f docker-compose.test.yml run --rm sut
+LATEST_VERSION="ubuntu-22-04"
 
 # You need to provide your own creds because #security
 docker login
 
-docker pull ubuntu:22.04
+VERSIONS=( "ubuntu-20-04" "ubuntu-22-04" )
+for VERSION in "${VERSIONS[@]}"
+do
+  docker build --no-cache -t sykescottages/base:${VERSION} $VERSION
+  docker push sykescottages/base:${VERSION}
 
-docker build --no-cache -t sykescottages/base:$VERSION -t sykescottages/base:latest .
+  if [[ "$LATEST_VERSION" == "$VERSION" ]]; then
+    docker tag sykescottages/base:${VERSION} sykescottages/base:latest
+    docker push sykescottages/base:latest
+    docker rmi sykescottages/base:latest
+  fi
 
-docker push sykescottages/base:$VERSION
-docker push sykescottages/base:latest
-
-docker rmi sykescottages/base:$VERSION
-docker rmi sykescottages/base:latest
+  docker rmi sykescottages/base:${VERSION}
+done
