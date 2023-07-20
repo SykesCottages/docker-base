@@ -5,6 +5,11 @@
 This is a foundation image we at Sykes Cottages use for almost all of our docker images. We use a 
 hierarchy of images for each of our containers to minimise maintenance and reduce build times. This is the top level of our own hierarchy which inherits from the official Docker [Ubuntu](https://hub.docker.com/_/ubuntu/) and [Scratch](https://hub.docker.com/_/scratch) images in turn.
 
+## Supported versions and available tags
+
+- Ubuntu 20.04.6 (LTS Current EOL 2030-04-02) - `sykescottages/base:ubuntu-20-04`
+- Ubuntu 22.04.2 (LTS Current EOL 2032-04-09) - `sykescottages/base:ubuntu-22-04`
+
 ## Usage
 
 Pulling the image:
