@@ -10,6 +10,11 @@ hierarchy of images for each of our containers to minimise maintenance and reduc
 - Ubuntu 20.04.6 (LTS Current EOL 2030-04-02) - `sykescottages/base:ubuntu-20-04`
 - Ubuntu 22.04.2 (LTS Current EOL 2032-04-09) - `sykescottages/base:ubuntu-22-04`
 
+## Image Itinerary
+
+For better visibility of packages there is now an included aptitude itinerary with each tag, this is located in the corresponding folder to the tag. 
+This will give better clarity on package version changes and be reflected in the git history. 
+
 ## Usage
 
 Pulling the image:
