@@ -7,7 +7,7 @@ docker login >> /dev/null 2>&1
 VERSIONS=( "ubuntu-20-04" "ubuntu-22-04" )
 for VERSION in "${VERSIONS[@]}"
 do
-  ./build.sh $VERSION $LATEST_VERSION
+  ./build.sh $VERSION $LATEST_VERSION >> /dev/null 2>&1 &
 done
 
 wait
