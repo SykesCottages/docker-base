@@ -8,7 +8,7 @@ hierarchy of images for each of our containers to minimise maintenance and reduc
 ## Supported versions and available tags
 
 - Ubuntu 20.04.6 (LTS Current EOL 2030-04-02) - `sykescottages/base:ubuntu-20-04`
-- Ubuntu 22.04.2 (LTS Current EOL 2032-04-09) - `sykescottages/base:ubuntu-22-04`
+- Ubuntu 22.04.3 (LTS Current EOL 2032-04-09) - `sykescottages/base:ubuntu-22-04`
 
 ## Image Itinerary
 
