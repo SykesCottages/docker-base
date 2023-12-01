@@ -8,10 +8,21 @@ hierarchy of images for each of our containers to minimise maintenance and reduc
 ## Architecture Support
 
 All our images have support for:
-- linux/amd64
-- linux/arm64
-- linux/arm/v7
-- linux/arm64/v8
+- `linux/amd64`
+- `linux/arm64`
+- `linux/arm/v7`
+
+Obtaining platform specific architectures:
+
+```shell
+docker pull --platform=<ARCHITECTURE> sykescottages/base:<VERSION>
+```
+
+Testing you have the right architecture:
+
+```shell
+docker run -it --platform=<ARCHITECTURE> sykescottages/base:<VERSION> arch
+```
 
 ## Supported versions and available tags
 
