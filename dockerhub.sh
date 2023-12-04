@@ -1,27 +1,22 @@
 #!/bin/bash
 
-LATEST_VERSION=ubuntu-22-04
+VERSIONS=("ubuntu-20-04" "ubuntu-22-04")
+ARCH=$(arch)
 
-# You need to provide your own creds because #security
 docker login >>/dev/null 2>&1
 
-VERSIONS=("ubuntu-20-04" "ubuntu-22-04")
+if [ "x86_64" == "$ARCH" ]; then
+  ARCH=amd64
+elif [ "aarch64" == "$ARCH" ]; then
+  ARCH=arm64
+else
+  echo "Architecture ${ARCH} not supported."
+  exit 1
+fi
+
+echo "Building ${ARCH} images"
 for VERSION in "${VERSIONS[@]}"; do
-  docker buildx build \
-    --platform linux/arm/v7,linux/arm64,linux/amd64 \
-    --quiet \
-    --no-cache \
-    --push \
-    -t sykescottages/base:${VERSION} \
-    $VERSION >>/dev/null 2>&1 &
+  ./build.sh $VERSION $ARCH >>/dev/null 2>&1 &
 done
 
 wait
-
-docker buildx build \
-  --platform linux/arm/v7,linux/arm64,linux/amd64 \
-  --quiet \
-  --no-cache \
-  --push \
-  -t sykescottages/base:latest \
-  $LATEST_VERSION >>/dev/null 2>&1

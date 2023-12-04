@@ -10,7 +10,6 @@ hierarchy of images for each of our containers to minimise maintenance and reduc
 All our images have support for:
 - `linux/amd64`
 - `linux/arm64`
-- `linux/arm/v7`
 
 Obtaining platform specific architectures:
 
