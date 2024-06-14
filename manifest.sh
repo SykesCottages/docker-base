@@ -5,7 +5,7 @@ LATEST_VERSION="ubuntu-22-04"
 
 docker login >>/dev/null 2>&1
 
-VERSIONS=("ubuntu-20-04" "ubuntu-22-04")
+VERSIONS=("ubuntu-20-04" "ubuntu-22-04" "ubuntu-24-04")
 
 for VERSION in "${VERSIONS[@]}"; do
   TAG="sykescottages/base:${VERSION}"

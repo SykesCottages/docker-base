@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSIONS=("ubuntu-20-04" "ubuntu-22-04")
+VERSIONS=("ubuntu-20-04" "ubuntu-22-04" "ubuntu-24-04")
 ARCH=$(arch)
 
 docker login >>/dev/null 2>&1

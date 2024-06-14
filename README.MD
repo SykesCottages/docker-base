@@ -25,8 +25,9 @@ docker run -it --platform=<ARCHITECTURE> sykescottages/base:<VERSION> arch
 
 ## Supported versions and available tags
 
-- Ubuntu 20.04.6 (LTS Current EOL 2030-04-02) - `sykescottages/base:ubuntu-20-04`
-- Ubuntu 22.04.3 (LTS Current EOL 2032-04-09) - `sykescottages/base:ubuntu-22-04`
+- Ubuntu 20.04.6 (LTS Current EOL 2032-04-02) - `sykescottages/base:ubuntu-20-04`
+- Ubuntu 22.04.3 (LTS Current EOL 2034-04-09) - `sykescottages/base:ubuntu-22-04`
+- Ubuntu 24.04.3 (LTS Current EOL 2036-04-09) - `sykescottages/base:ubuntu-24-04`
 
 ## Image Itinerary
 
