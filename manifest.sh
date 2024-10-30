@@ -2,6 +2,7 @@
 
 export DOCKER_CLI_EXPERIMENTAL=enabled
 LATEST_VERSION="ubuntu-22-04"
+DATE=$(date '+%Y%m%d')
 
 docker login >>/dev/null 2>&1
 
@@ -14,6 +15,13 @@ for VERSION in "${VERSIONS[@]}"; do
       --amend "$TAG-amd64" \
       --amend "$TAG-arm64"
   docker manifest push $TAG
+
+  VERSION_TAG="${TAG}-${DATE}"
+    docker manifest rm $VERSION_TAG
+    docker manifest create $VERSION_TAG \
+        --amend "$TAG-amd64" \
+        --amend "$TAG-arm64"
+    docker manifest push $VERSION_TAG
 done
 
 TAG="sykescottages/base:latest"
